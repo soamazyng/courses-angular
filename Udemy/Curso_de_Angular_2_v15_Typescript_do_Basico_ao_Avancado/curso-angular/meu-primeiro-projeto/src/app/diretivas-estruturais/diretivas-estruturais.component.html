@@ -1,0 +1,26 @@
+<h2>ngIf</h2>
+<p *ngIf="condition; else elseBlock">diretivas-estruturais works!</p>
+
+<ng-template #elseBlock>
+  <p>Else block</p>
+</ng-template>
+
+<hr />
+
+<p *ngIf="conditionButton">True</p>
+
+<p *ngIf="!conditionButton">False</p>
+
+<button (click)="conditionButton = !conditionButton">Toggle</button>
+
+<hr />
+
+<h2>ngFor</h2>
+
+<ul>
+  <li *ngFor="let item of items; let i = index" (click)="removeItem(i)">
+    [{{ i }}] {{ item.name }} - idade: {{ item.age }}
+  </li>
+</ul>
+
+<button (click)="addItem()">Add item</button>

@@ -6,8 +6,8 @@ import { timeout } from 'rxjs';
   template: ` <app-title
       [className]="classNameTitle"
       title="Bem-vindo(a)"
-    ></app-title>
-    <app-data-binding></app-data-binding>
+    ></app-title>    
+    <app-diretivas-estruturais></app-diretivas-estruturais>
     <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {

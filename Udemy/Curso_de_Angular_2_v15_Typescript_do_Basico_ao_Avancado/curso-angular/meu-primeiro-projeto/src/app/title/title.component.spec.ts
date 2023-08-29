@@ -8,7 +8,7 @@ describe('TitleComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TitleComponent]
+      declarations: [TitleComponent],
     });
     fixture = TestBed.createComponent(TitleComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,9 @@ describe('TitleComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('#getTitle should return "Angular"', () => {
+    expect(component.title).toEqual('Angular');
   });
 });

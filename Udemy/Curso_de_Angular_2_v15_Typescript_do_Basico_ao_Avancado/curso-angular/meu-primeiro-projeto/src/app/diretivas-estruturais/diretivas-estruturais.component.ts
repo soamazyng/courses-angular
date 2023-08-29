@@ -14,6 +14,7 @@ interface Item {
 export class DiretivasEstruturaisComponent {
   public condition: boolean = true;
   public conditionButton: boolean = true;
+  public nameValue: string = 'Jay';
   public items: Array<Item> = [
     { id: 1, name: 'John', age: 20 },
     { id: 2, name: 'item 2', age: 30 },
@@ -36,5 +37,10 @@ export class DiretivasEstruturaisComponent {
 
   public removeItem(event: number): void {
     this.items.splice(event, 1);
+  }
+
+  public nameRandom(): void {
+    const names = ['John', 'item 2', 'item 3'];
+    this.nameValue = names[Math.floor(Math.random() * names.length)];
   }
 }

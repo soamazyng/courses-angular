@@ -24,3 +24,14 @@
 </ul>
 
 <button (click)="addItem()">Add item</button>
+
+<h2>Switch</h2>
+
+<div [ngSwitch]="nameValue">
+  <p *ngSwitchCase="'John'">Teste 1</p>
+  <p *ngSwitchCase="'item 2'">Teste 2</p>
+  <p *ngSwitchCase="'item 3'">Teste 3</p>
+  <p *ngSwitchDefault>Valor Default</p>
+</div>
+
+<button (click)="nameRandom()">Click!</button>

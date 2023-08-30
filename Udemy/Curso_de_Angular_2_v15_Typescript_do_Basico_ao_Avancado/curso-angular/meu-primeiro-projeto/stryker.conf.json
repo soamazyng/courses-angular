@@ -1,23 +1,9 @@
 {
   "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
-  "_comment": "This config was generated using 'stryker init'. Please see the guide for more information: https://stryker-mutator.io/docs/stryker-js/guides/angular",
-  "mutate": [
-    "src/**/*.ts",
-    "!src/**/*.spec.ts",
-    "!src/test.ts",
-    "!src/environments/*.ts"
-  ],
+  "_comment": "This config was generated using 'stryker init'. Please take a look at: https://stryker-mutator.io/docs/stryker-js/configuration/ for more information.",
+  "packageManager": "npm",
+  "reporters": ["html", "clear-text", "progress", "dashboard"],
   "testRunner": "jest",
-  "jest": {
-    "projectType": "custom",
-    "configFile": "jest.config.js",
-    "config": {
-      "testEnvironment": "jest-environment-jsdom-sixteen"
-    },
-    "enableFindRelatedTests": true
-  },
-  "reporters": ["progress", "clear-text", "html"],
-  "concurrency": 4,
-  "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
+  "testRunner_comment": "Take a look at (missing 'homepage' URL in package.json) for information about the jest plugin.",
   "coverageAnalysis": "perTest"
 }

@@ -1,6 +1,6 @@
 {
   "name": "meu-primeiro-projeto",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,8 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "test:ci": "jest --runInBand",
-    "teste:stryker": "stryker run"
+    "test:ci": "jest --runInBand"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +41,7 @@
     "setupFilesAfterEnv": [
       "<rootDir>/setup-jest.ts"
     ],
+    "globalSetup": "jest-preset-angular/global-setup",
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/dist/"

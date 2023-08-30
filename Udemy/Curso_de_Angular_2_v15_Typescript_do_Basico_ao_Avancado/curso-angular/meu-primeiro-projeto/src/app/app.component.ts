@@ -27,17 +27,18 @@ interface IItemList {
       <h2>em um ng content 002</h2>
     </app-diretivas-atributos> -->
     <!-- <app-new-component></app-new-component> -->
-    <ng-template [ngIf]="dataItem">
+    <!-- <ng-template [ngIf]="dataItem">
       <h1>{{ dataItem.name }}</h1>
       <h2>{{ dataItem.age }}</h2>
     </ng-template>
-    <app-output (dataList)="setData($event)"></app-output>
+    <app-output (dataList)="setData($event)"></app-output> -->
     <!-- <app-input [contador]="addValue"></app-input>
     <button (click)="addValue = addValue + 1">Adicionar</button>
     <app-server-element
       *ngFor="let serverElement of serverElements"
       [element]="serverElement"
     ></app-server-element> -->
+    <app-food-list></app-food-list>
     <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {

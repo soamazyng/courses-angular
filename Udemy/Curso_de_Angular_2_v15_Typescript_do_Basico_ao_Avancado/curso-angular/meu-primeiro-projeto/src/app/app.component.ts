@@ -39,6 +39,7 @@ interface IItemList {
       [element]="serverElement"
     ></app-server-element> -->
     <app-food-list></app-food-list>
+    <app-food-add></app-food-add>
     <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {

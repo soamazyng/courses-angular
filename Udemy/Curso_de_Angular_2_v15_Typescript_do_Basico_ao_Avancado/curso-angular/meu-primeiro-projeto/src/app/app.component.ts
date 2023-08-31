@@ -38,8 +38,9 @@ interface IItemList {
       *ngFor="let serverElement of serverElements"
       [element]="serverElement"
     ></app-server-element> -->
-    <app-food-list></app-food-list>
-    <app-food-add></app-food-add>
+    <!-- <app-food-list></app-food-list>
+    <app-food-add></app-food-add> -->
+    <app-forms></app-forms>
     <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {

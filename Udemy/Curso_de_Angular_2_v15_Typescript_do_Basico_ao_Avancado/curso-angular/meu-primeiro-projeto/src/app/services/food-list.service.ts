@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Food } from '../entities/interfaces/food';
@@ -13,37 +13,64 @@ export class FoodListService {
 
   public emitEvent = new EventEmitter();
 
-  private list: Array<string> = [
-    'Pizza',
-    'Hamburger',
-    'Hot Dog',
-    'Sushi',
-    'Pasta',
-    'Salad',
-  ];
-
   constructor(private http: HttpClient) {}
 
-  public getFoodList(): Observable<Food<IFood>> {
-    return this.http.get<Food<IFood>>(`${environment.apiUrl + this.url}`).pipe(
-      (res) => res,
-      (error) => error
-    );
-  }
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'content-type': 'application/json',
+    }),
+  };
 
-  public addFood(food: IFood): Observable<IFood> {
+  public get(): Observable<Food<IFood>> {
     return this.http
-      .post<IFood>(`${environment.apiUrl + this.url}`, {
-        id: food.id,
-        name: food.name,
-      })
+      .get<Food<IFood>>(`${environment.apiUrl + this.url}`, this.httpOptions)
       .pipe(
         (res) => res,
         (error) => error
       );
   }
 
-  public producerFoodList(food: IFood): void {
+  public save(food: IFood): Observable<IFood> {
+    return this.http
+      .post<IFood>(
+        `${environment.apiUrl + this.url}`,
+        {
+          id: food.id,
+          name: food.name,
+        },
+        this.httpOptions
+      )
+      .pipe(
+        (res) => res,
+        (error) => error
+      );
+  }
+
+  public edit(id: string, food: IFood): Observable<IFood> {
+    return this.http
+      .put<IFood>(
+        `${environment.apiUrl + this.url}/${id}`,
+        {
+          id: food.id,
+          name: food.name,
+        },
+        this.httpOptions
+      )
+      .pipe(
+        (res) => res,
+        (error) => error
+      );
+  }
+
+  public delete(id: string): Observable<IFood> {
+    return this.http
+      .delete<IFood>(`${environment.apiUrl + this.url}/${id}`)
+      .pipe(
+        (res) => res,
+        (error) => error
+      );
+  }
+  public producer(food: IFood): void {
     this.emitEvent.emit(food);
   }
 }

@@ -1,3 +1,8 @@
 <ul>
-  <li *ngFor="let food of foodList">[{{ food.id }}] -- {{ food.name }}</li>
+  <li *ngFor="let food of foodList">
+    <input [(ngModel)]="food.name" />
+    <button (click)="updateFood(food.id, food.name)">Update</button>
+
+    <button (click)="deleteFood(food.id)">Delete</button>
+  </li>
 </ul>

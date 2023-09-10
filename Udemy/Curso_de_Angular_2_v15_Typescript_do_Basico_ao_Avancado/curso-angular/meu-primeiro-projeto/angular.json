@@ -5,6 +5,10 @@
   "projects": {
     "meu-primeiro-projeto": {
       "projectType": "application",
+      "styles": [
+        "node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.scss"
+      ],
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"

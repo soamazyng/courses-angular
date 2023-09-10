@@ -40,7 +40,8 @@ interface IItemList {
     ></app-server-element> -->
     <!-- <app-food-list></app-food-list>
     <app-food-add></app-food-add> -->
-    <app-forms></app-forms>
+    <!-- <app-forms></app-forms> -->
+    <app-reactive-forms></app-reactive-forms>
     <router-outlet></router-outlet>`,
 })
 export class AppComponent implements OnInit {

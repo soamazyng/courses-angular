@@ -1,0 +1,70 @@
+<form [formGroup]="saveForm" (submit)="onSubmit()" class="form-group">
+  <div class="form-group">
+    <label>Nome:</label>
+    <input
+      type="text"
+      formControlName="nome"
+      class="form-control"
+      [ngClass]="{
+        'is-invalid':
+          (saveForm.get('nome')?.errors?.['required'] &&
+          saveForm.get('nome')?.touched &&
+          saveForm.get('nome')?.dirty) ||
+          (!saveForm.get('nome')?.errors?.['required']
+          && actualLength('nome') < requiredLength('nome'))
+      }"
+      aria-describedby="nameHelp"
+    />
+    <small id="nameHelp" class="form-text text-muted">Min: 5 characters</small>
+    <div
+      class="invalid-feedback"
+      *ngIf="
+        saveForm.get('nome')?.errors?.['required']"
+    >
+      Name is required
+    </div>
+    <div
+      class="invalid-feedback"
+      *ngIf="
+      !saveForm.get('nome')?.errors?.['required'] &&
+      actualLength('nome') < requiredLength('nome')
+    "
+    >
+      Name need to have at least
+      {{ requiredLength("nome") }}
+      characters
+    </div>
+  </div>
+  <div class="form-group">
+    <label>E-mail:</label>
+    <input type="email" formControlName="email" class="form-control" />
+    <span
+      class="text-danger"
+      *ngIf="
+        saveForm.get('email')?.errors?.['required'] &&
+        saveForm.get('email')?.touched &&
+        saveForm.get('email')?.dirty
+      "
+    >
+      Email address is required
+    </span>
+
+    <span
+      class="text-danger"
+      *ngIf="
+      !saveForm.get('email')?.errors?.['required'] && saveForm.get('email')?.errors?.['email']
+    "
+    >
+      Email address is invalid
+    </span>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="saveForm.invalid">
+      Send
+    </button>
+  </div>
+
+  {{ saveForm.get("nome")?.errors | json }}
+  {{ saveForm.get("nome")?.touched | json }}
+  {{ saveForm.get("nome")?.dirty | json }}
+</form>

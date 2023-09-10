@@ -1,6 +1,83 @@
-<form #submitForm="ngForm">
+<form #submitForm="ngForm" class="form-group" (ngSubmit)="sendForm(submitForm)">
+  <br /><br />
+
+  valid: {{ submitForm.valid }} <br /><br />
+  dirty: {{ submitForm.dirty }} <br /><br />
+  touched: {{ submitForm.touched }} <br /><br />
+  pritine: {{ submitForm.pristine }} <br /><br />
+  submitted: {{ submitForm.submitted }} <br /><br />
+
+  <br /><br />
+
   <label>Name:</label>
-  <input type="text" placeholder="Enter your name" name="name" ngModel />
+  <input
+    type="text"
+    placeholder="Enter your name"
+    name="name"
+    #name="ngModel"
+    [ngModel]="name.value"
+    required="true"
+    class="is-invalid"
+    [ngClass]="{
+      'is-invalid': name.invalid && (submitForm.dirty || submitForm.touched),
+      'form-control': true
+    }"
+  />
+  <div
+    *ngIf="name.invalid && (submitForm.dirty || submitForm.touched)"
+    class="invalid-feedback"
+  >
+    Name is required
+  </div>
+
+  <br /><br />
+
+  <label>Masculino:</label>
+  <input
+    type="radio"
+    name="sexo"
+    value="masculino"
+    ngModel
+    class="form-check-input"
+  />
+  <label>Feminino:</label>
+  <input
+    type="radio"
+    name="sexo"
+    value="feminino"
+    ngModel
+    class="form-check-input"
+  />
+
+  <br /><br />
+
+  <label>Selecione:</label>
+
+  <div *ngFor="let item of user.frameworks">
+    <input
+      type="checkbox"
+      [name]="item.name"
+      ngModel
+      class="form-check-input"
+    />
+    {{ item.name }}
+  </div>
+
+  <br /><br />
+
+  <label>Selecione:</label>
+  <select name="frameworks" ngModel class="form-control">
+    <option value="">Selecione</option>
+    <option *ngFor="let item of user.frameworks" [ngValue]="item">
+      {{ item.name }}
+    </option>
+  </select>
+
+  <br /><br />
+  <button type="submit" [disabled]="submitForm.invalid" class="btn btn-primary">
+    Enviar
+  </button>
 </form>
 
+<br /><br />
 {{ submitForm.value | json }}

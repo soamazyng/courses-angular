@@ -13,19 +13,7 @@ interface IItemList {
 
 @Component({
   selector: 'app-root',
-  template: ` <app-title
-      [className]="classNameTitle"
-      title="Bem-vindo(a)"
-    ></app-title>
-    <!-- <app-diretivas-estruturais></app-diretivas-estruturais> -->
-    <!-- <app-diretivas-atributos>
-      <h1>Titulo renderizado</h1>
-      <h2>em um ng content</h2>
-    </app-diretivas-atributos> -->
-    <!-- <app-diretivas-atributos>
-      <h1>Titulo renderizado 002</h1>
-      <h2>em um ng content 002</h2>
-    </app-diretivas-atributos> -->
+  template: `<app-home-page> </app-home-page>
     <!-- <app-new-component></app-new-component> -->
     <!-- <ng-template [ngIf]="dataItem">
       <h1>{{ dataItem.name }}</h1>
@@ -39,10 +27,7 @@ interface IItemList {
       [element]="serverElement"
     ></app-server-element> -->
     <!-- <app-food-list></app-food-list>
-    <app-food-add></app-food-add> -->
-    <!-- <app-forms></app-forms> -->
-    <app-reactive-forms></app-reactive-forms>
-    <router-outlet></router-outlet>`,
+    <app-food-add></app-food-add> -->`,
 })
 export class AppComponent implements OnInit {
   title = 'meu-primeiro-projeto';

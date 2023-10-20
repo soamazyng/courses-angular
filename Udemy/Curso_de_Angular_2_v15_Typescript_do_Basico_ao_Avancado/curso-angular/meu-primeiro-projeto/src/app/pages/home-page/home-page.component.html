@@ -1,0 +1,57 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a
+      class="navbar-brand"
+      [routerLink]="['/']"
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a
+          class="nav-item nav-link"
+          [routerLink]="['./dashboard']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Dashboard</a
+        >
+        <a
+          class="nav-item nav-link"
+          [routerLink]="['./diretivas']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Diretivas</a
+        >
+        <a
+          class="nav-item nav-link"
+          [routerLink]="['./forms', '123', 'soamazing']"
+          [queryParams]="{ name: 'Jaqueline Teixeira Benedicto', age: 100 }"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Forms</a
+        >
+        <a
+          class="nav-item nav-link"
+          [routerLink]="['./forms-reactive']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Forms Reactive</a
+        >
+        <a
+          class="nav-item nav-link"
+          [routerLink]="['./forms-reactive/inside-page']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Forms child</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>
+
+<app-title [className]="classNameTitle" title="Bem-vindo(a)"></app-title>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

@@ -127,7 +127,6 @@
       }
     }
   },
-  "defaultProject": "my-first-app",
   "cli": {
     "analytics": false
   }

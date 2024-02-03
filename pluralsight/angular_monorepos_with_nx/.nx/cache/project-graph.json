@@ -1,0 +1,227 @@
+{
+  "nodes": {
+    "my-first-nx-project-e2e": {
+      "name": "my-first-nx-project-e2e",
+      "type": "e2e",
+      "data": {
+        "root": "my-first-nx-project/apps/my-first-nx-project-e2e",
+        "name": "my-first-nx-project-e2e",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "sourceRoot": "apps/my-first-nx-project-e2e/src",
+        "targets": {
+          "e2e": {
+            "executor": "@nx/cypress:cypress",
+            "options": {
+              "cypressConfig": "apps/my-first-nx-project-e2e/cypress.config.ts",
+              "testingType": "e2e",
+              "devServerTarget": "my-first-nx-project:serve:development"
+            },
+            "configurations": {
+              "production": {
+                "devServerTarget": "my-first-nx-project:serve:production"
+              },
+              "ci": {
+                "devServerTarget": "my-first-nx-project:serve-static"
+              }
+            }
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {},
+            "configurations": {}
+          }
+        },
+        "tags": [],
+        "implicitDependencies": [
+          "my-first-nx-project"
+        ]
+      }
+    },
+    "my-first-nx-project": {
+      "name": "my-first-nx-project",
+      "type": "app",
+      "data": {
+        "root": "my-first-nx-project/apps/my-first-nx-project",
+        "name": "my-first-nx-project",
+        "$schema": "../../node_modules/nx/schemas/project-schema.json",
+        "projectType": "application",
+        "prefix": "my-first-nx-project",
+        "sourceRoot": "apps/my-first-nx-project/src",
+        "tags": [],
+        "targets": {
+          "build": {
+            "executor": "@angular-devkit/build-angular:browser",
+            "outputs": [
+              "{options.outputPath}"
+            ],
+            "options": {
+              "outputPath": "dist/apps/my-first-nx-project/browser",
+              "index": "apps/my-first-nx-project/src/index.html",
+              "main": "apps/my-first-nx-project/src/main.ts",
+              "polyfills": [
+                "zone.js"
+              ],
+              "tsConfig": "apps/my-first-nx-project/tsconfig.app.json",
+              "inlineStyleLanguage": "scss",
+              "assets": [
+                "apps/my-first-nx-project/src/favicon.ico",
+                "apps/my-first-nx-project/src/assets"
+              ],
+              "styles": [
+                "apps/my-first-nx-project/src/styles.scss"
+              ],
+              "scripts": []
+            },
+            "configurations": {
+              "production": {
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  },
+                  {
+                    "type": "anyComponentStyle",
+                    "maximumWarning": "2kb",
+                    "maximumError": "4kb"
+                  }
+                ],
+                "outputHashing": "all"
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "vendorChunk": true,
+                "extractLicenses": false,
+                "sourceMap": true,
+                "namedChunks": true
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "serve": {
+            "executor": "@angular-devkit/build-angular:dev-server",
+            "configurations": {
+              "production": {
+                "buildTarget": "my-first-nx-project:build:production"
+              },
+              "development": {
+                "buildTarget": "my-first-nx-project:build:development"
+              }
+            },
+            "defaultConfiguration": "development",
+            "options": {}
+          },
+          "extract-i18n": {
+            "executor": "@angular-devkit/build-angular:extract-i18n",
+            "options": {
+              "buildTarget": "my-first-nx-project:build"
+            },
+            "configurations": {}
+          },
+          "lint": {
+            "executor": "@nx/eslint:lint",
+            "outputs": [
+              "{options.outputFile}"
+            ],
+            "options": {},
+            "configurations": {}
+          },
+          "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+              "{workspaceRoot}/coverage/{projectRoot}"
+            ],
+            "options": {
+              "jestConfig": "apps/my-first-nx-project/jest.config.ts"
+            },
+            "configurations": {}
+          },
+          "serve-static": {
+            "executor": "@nx/web:file-server",
+            "options": {
+              "buildTarget": "my-first-nx-project:build"
+            },
+            "configurations": {}
+          },
+          "server": {
+            "dependsOn": [
+              "build"
+            ],
+            "executor": "@angular-devkit/build-angular:server",
+            "options": {
+              "outputPath": "dist/apps/my-first-nx-project/server",
+              "main": "apps/my-first-nx-project/server.ts",
+              "tsConfig": "apps/my-first-nx-project/tsconfig.server.json",
+              "inlineStyleLanguage": "scss"
+            },
+            "configurations": {
+              "production": {
+                "outputHashing": "media"
+              },
+              "development": {
+                "buildOptimizer": false,
+                "optimization": false,
+                "sourceMap": true,
+                "extractLicenses": false,
+                "vendorChunk": true
+              }
+            },
+            "defaultConfiguration": "production"
+          },
+          "serve-ssr": {
+            "executor": "@angular-devkit/build-angular:ssr-dev-server",
+            "configurations": {
+              "development": {
+                "browserTarget": "my-first-nx-project:build:development",
+                "serverTarget": "my-first-nx-project:server:development"
+              },
+              "production": {
+                "browserTarget": "my-first-nx-project:build:production",
+                "serverTarget": "my-first-nx-project:server:production"
+              }
+            },
+            "defaultConfiguration": "development",
+            "options": {}
+          },
+          "prerender": {
+            "executor": "@angular-devkit/build-angular:prerender",
+            "options": {
+              "routes": [
+                "/"
+              ]
+            },
+            "configurations": {
+              "development": {
+                "browserTarget": "my-first-nx-project:build:development",
+                "serverTarget": "my-first-nx-project:server:development"
+              },
+              "production": {
+                "browserTarget": "my-first-nx-project:build:production",
+                "serverTarget": "my-first-nx-project:server:production"
+              }
+            },
+            "defaultConfiguration": "production"
+          }
+        },
+        "implicitDependencies": []
+      }
+    }
+  },
+  "externalNodes": {},
+  "dependencies": {
+    "my-first-nx-project-e2e": [
+      {
+        "source": "my-first-nx-project-e2e",
+        "target": "my-first-nx-project",
+        "type": "implicit"
+      }
+    ],
+    "my-first-nx-project": []
+  },
+  "version": "6.0"
+}

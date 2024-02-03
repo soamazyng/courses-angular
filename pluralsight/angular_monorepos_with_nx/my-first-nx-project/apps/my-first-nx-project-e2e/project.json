@@ -1,0 +1,30 @@
+{
+  "name": "my-first-nx-project-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/my-first-nx-project-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/my-first-nx-project-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "my-first-nx-project:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "my-first-nx-project:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "my-first-nx-project:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["my-first-nx-project"]
+}

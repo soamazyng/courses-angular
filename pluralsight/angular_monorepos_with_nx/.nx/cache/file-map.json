@@ -1,0 +1,205 @@
+{
+  "version": "6.0",
+  "nxVersion": "17.2.7",
+  "deps": {},
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {
+      "my-first-nx-project": [
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/.eslintrc.json",
+          "hash": "15634128653673714059"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/jest.config.ts",
+          "hash": "8339753409956749338"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/project.json",
+          "hash": "1193041863970188353"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/server.ts",
+          "hash": "6315526926168244565"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.component.html",
+          "hash": "12718836648984693106"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.component.scss",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.component.spec.ts",
+          "hash": "16451989899308311533"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.component.ts",
+          "hash": "9834446864889374753"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.config.server.ts",
+          "hash": "472700109066692288"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.config.ts",
+          "hash": "7943003703997757455"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/app.routes.ts",
+          "hash": "6185150965714414910"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/app/nx-welcome.component.ts",
+          "hash": "5238326570666863842"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/index.html",
+          "hash": "9524143093458221843"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/main.server.ts",
+          "hash": "11653607448136507287"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/main.ts",
+          "hash": "16635586463787978962"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/styles.scss",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/tsconfig.json",
+          "hash": "12094030803572703611"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/tsconfig.server.json",
+          "hash": "3298907610687776221"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "my-first-nx-project-e2e": [
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/.eslintrc.json",
+          "hash": "14060216369337943343"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/cypress.config.ts",
+          "hash": "12586416982398116375"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/project.json",
+          "hash": "9818412507539489272"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/src/e2e/app.cy.ts",
+          "hash": "15442377929190686981"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "my-first-nx-project/apps/my-first-nx-project-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": "my-first-nx-project/.editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "my-first-nx-project/.eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "my-first-nx-project/.eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": "my-first-nx-project/.gitignore",
+        "hash": "8491837053101957257"
+      },
+      {
+        "file": "my-first-nx-project/.prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": "my-first-nx-project/.prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "my-first-nx-project/.vscode/extensions.json",
+        "hash": "235626400633494639"
+      },
+      {
+        "file": "my-first-nx-project/README.md",
+        "hash": "15871172187929480492"
+      },
+      {
+        "file": "my-first-nx-project/jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "my-first-nx-project/jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "my-first-nx-project/nx.json",
+        "hash": "7325401892182844397"
+      },
+      {
+        "file": "my-first-nx-project/package-lock.json",
+        "hash": "13065549423989487326"
+      },
+      {
+        "file": "my-first-nx-project/package.json",
+        "hash": "17798042132300803170"
+      },
+      {
+        "file": "my-first-nx-project/tsconfig.base.json",
+        "hash": "16936441711144470533"
+      }
+    ]
+  }
+}
